@@ -1,0 +1,66 @@
+1 - What is Emmet?
+Ans - 
+Emmet is a web development toolkit which is used is write a
+html and css code quickly and efficiently
+    ex. ul>li*3
+        which gives us a 
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+---------------------------------------------------------------
+
+2 - Difference between a Library and Framework?
+Ans - 
+
+Library : Library is Collection of prewritten code which can be used by the developers. Libraries consist of functions, routines, classes, or modules that provide specific functionality, and developers can call upon them as needed.
+ex. React
+
+Framework : A framework is a more comprehensive structure that provides a set of rules, guidelines, and tools to build applications. ex.Angular
+
+---------------------------------------------------------------
+
+3 - What is CDN? Why do we use it?
+Ans - 
+
+CDN, or Content Delivery Network, is a distributed network of servers that helps deliver web content to users more efficiently. It improves website performance by caching and serving content from servers located closer to the user, reducing latency and bandwidth usage.
+
+---------------------------------------------------------------
+
+4 - Why is React known as React?
+Ans - 
+
+React is named "React" because of its ability to efficiently update and "react" to changes in the application's state, automatically updating the user interface.
+
+---------------------------------------------------------------
+
+5 - What is crossorigin in the script tag?
+Ans - 
+
+The crossorigin attribute in the script tag is used when loading scripts from a different domain. It allows the browser to request the script with CORS (Cross-Origin Resource Sharing) headers, enabling secure cross-origin requests.
+
+---------------------------------------------------------------
+
+6 - What is the difference between React and ReactDOM?
+Ans - 
+
+React is the core library for building user interfaces, while ReactDOM is a specific package designed for web environments. ReactDOM provides the necessary bindings to integrate React with the Document Object Model (DOM).
+
+---------------------------------------------------------------
+
+7 - What is the difference between react.development.js and react.production.js files via CDN?
+Ans - 
+
+The development version (react.development.js) includes additional warnings and debugging information to aid developers during development. The production version (react.production.js) is optimized for performance and doesn't include the extra development-related features.
+
+---------------------------------------------------------------
+
+8 - What is async and defer?
+Ans - 
+
+In the context of script tags, async and defer are attributes used to control when a script is executed.
+
+async: The script is executed asynchronously, meaning it won't block the rendering of the page, and it will be executed as soon as it's available.
+defer: The script is executed in order after the HTML is fully parsed. It won't block the rendering, and multiple scripts with defer will be executed in the order they appear in the document.
