@@ -1,4 +1,4 @@
-Parcel's functions
+Functions of Parcel
 
 1) Zero Configuration:
 2) Automatic Dependency Resolution:
@@ -8,7 +8,14 @@ Parcel's functions
 5) Caching While development
 6) consistant hashing Algorithm
 7) HTTPS on dev
+8) cleaning our code
+9) super fast Build Algorithm
+10) port number
+11) Dev and Production Build
 
-
+---------------------------------------------------------------------
 
 transitive dependency :- When we creating a production ready app we need to do many things like bundling , caching , minimization , optimization so we can't do this stuff alone we  need some dependency and that dependencies need more dependencies that calls
+
+---------------------------------------------------------------------
+

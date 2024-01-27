@@ -1,0 +1,6 @@
+//for install feature of removing the console log from the code run this command:
+// npm install babel-plugin-transform-remove-console --save-dev
+
+{
+  "plugins": [["transform-remove-console", { "exclude": ["error", "warn"] }]]
+}
