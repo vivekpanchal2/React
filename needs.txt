@@ -1,0 +1,8 @@
+npm init or npm init -y => install npm in proj
+
+npm install -D parcel =>  installing parcel in proj
+
+npm i react 
+npm i raect-dom
+
+npm install babel-plugin-transform-remove-console --D
