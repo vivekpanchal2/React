@@ -47,7 +47,13 @@ const Header = () => {
 };
 
 const Body = () => {
-  return <Cards />;
+  return (
+    <div className="restuarantCards">
+      {restuarantList.map((restaurant) => {
+        return <RestaurantsCard {...restaurant.info} />;
+      })}
+    </div>
+  );
 };
 
 const restuarantList = [
@@ -506,15 +512,25 @@ const restuarantList = [
   },
 ];
 
-const Cards = () => {
+const RestaurantsCard = (props) => {
+  const { name, avgRating, cuisines, areaName, locality, cloudinaryImageId } =
+    props;
+
+  console.log(props);
+
   return (
     <div className="card">
-      <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/03501c33ecb3a3105124441e541e6fe4"></img>
+      <img
+        src={
+          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+          cloudinaryImageId
+        }
+      ></img>
       <div className="cardDetails">
-        <h2>McDonald's</h2>
-        <h4>4.2</h4>
-        <p>Burger , Desserts , Beverages ,Cafe</p>
-        <p>Kankaria</p>
+        <h2>{name}</h2>
+        <h4>{avgRating}</h4>
+        <p>{cuisines.join(", ")}</p>
+        <p id="location">{areaName + ", " + locality}</p>
       </div>
     </div>
   );
