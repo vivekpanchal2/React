@@ -1,62 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+export const IMG_CDN_LINK =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
-/*
-    header
-        -logo
-        -links
-    body
-    footer
-*/
-
-const App = () => {
-  return (
-    <>
-      <Header />
-      <Body />
-    </>
-  );
-};
-
-const Logo = () => {
-  return (
-    <a href="/" draggable="false">
-      <img
-        className="logo"
-        alt="logo"
-        src="https://getvectorlogo.com/wp-content/uploads/2020/02/foodex-vector-logo.png"
-      ></img>
-    </a>
-  );
-};
-
-const Header = () => {
-  return (
-    <div className="header">
-      <Logo />
-      <div className="nav-item">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="restuarantCards">
-      {restuarantList.map((restaurant) => {
-        return <RestaurantsCard {...restaurant.info} />;
-      })}
-    </div>
-  );
-};
-
-const restuarantList = [
+export const restuarantList = [
   {
     info: {
       id: "70279",
@@ -511,28 +456,3 @@ const restuarantList = [
     },
   },
 ];
-
-const RestaurantsCard = (props) => {
-  const { name, avgRating, cuisines, areaName, locality, cloudinaryImageId } =
-    props;
-
-  return (
-    <div className="card">
-      <img
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-      ></img>
-      <div className="cardDetails">
-        <h2>{name}</h2>
-        <h4>{avgRating}</h4>
-        <p>{cuisines.join(", ")}</p>
-        <p id="location">{areaName + ", " + locality}</p>
-      </div>
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
