@@ -1,12 +1,46 @@
-import { restaurantList } from "../contants";
 import { RestaurantsCard } from "./RestaurantsCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
-  const [restaurants, setRestaurants] = useState(restaurantList); // at first We need to render the all restaurant list so we set it as default
+  const [allRestaurants, setAllRestaurants] = useState([]);
+  const [filteredrestaurants, setFilteredRestaurants] = useState([]); // at first We need to render the all restaurant list so we set it as default
   const [searchText, setSearchText] = useState();
 
-  return (
+  useEffect(() => {
+    getRestaurants();
+  }, []);
+
+  async function getRestaurants() {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.02760&lng=72.58710&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+
+    if (!data.ok) {
+      throw new Error(`HTTP error! Status: ${data.status}`);
+    }
+
+    const json = await data.json();
+    setAllRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestaurants(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+  }
+
+  function filterData(searchText, restaurants) {
+    const filteredRestaurantList = restaurants.filter((restaurant) => {
+      return restaurant.info.name
+        .toLowerCase()
+        .includes(searchText.toLowerCase());
+    });
+    return filteredRestaurantList;
+  }
+
+  return allRestaurants.length === 0 ? (
+    <Shimmer />
+  ) : (
     <>
       <div className="search-container">
         <input
@@ -21,8 +55,8 @@ const Body = () => {
         <button
           className="search-btn"
           onClick={() => {
-            const data = filterData(searchText, restaurantList); // Filter the restaurants List
-            setRestaurants(data); // set new filtered list
+            const data = filterData(searchText, allRestaurants); // Filter the restaurants List
+            setFilteredRestaurants(data); // set new filtered list
           }}
         >
           Search
@@ -30,22 +64,14 @@ const Body = () => {
       </div>
 
       <div className="restaurantCards">
-        {restaurants.map((restaurant) => {
-          return <RestaurantsCard {...restaurant.info} />;
+        {filteredrestaurants.map((restaurant) => {
+          return (
+            <RestaurantsCard {...restaurant.info} key={restaurant.info.id} />
+          );
         })}
       </div>
     </>
   );
 };
-
-function filterData(searchText, restaurants) {
-  const filteredRestaurantList = restaurants.filter((restaurant) => {
-    return restaurant.info.name
-      .toLowerCase()
-      .includes(searchText.toLowerCase());
-  });
-
-  return filteredRestaurantList;
-}
 
 export default Body;

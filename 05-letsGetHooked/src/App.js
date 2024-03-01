@@ -1,7 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import Header from "./components/Header.jsx";
 import Body from "./components/Body";
+import Footer from "./components/Footer.jsx";
+import Example from "../useState.js";
 
 /*
     header
@@ -16,6 +18,8 @@ const App = () => {
     <>
       <Header />
       <Body />
+      <Footer />
+      <Example />
     </>
   );
 };
