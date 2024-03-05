@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item ul li {
+  padding: 10px;
+}
+
+.logo {
+  height: 50px;
+}
+
+.card {
+  height: auto;
+  width: 300px;
+  padding: 10px;
+  transition: 0.5s;
+}
+
+.card:hover img {
+  filter: grayscale(0%);
+}
+
+.card:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.card img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  filter: grayscale(50%);
+  transition: 0.5s;
+}
+
+.card .cardDetails {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.card .cardDetails > #location {
+  font-weight: 100;
+  color: #7e808c;
+}
+
+.restaurantCards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 50px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.search-bar {
+  border: 2px solid black;
+  border-radius: 20px 0px 0px 20px;
+  height: 2rem;
+  padding: 0.4rem 2rem;
+  width: 25%;
+  background-color: #7e808c;
+  color: aliceblue;
+}
+
+.search-btn {
+  border-radius: 0px 20px 20px 0px;
+  width: 10%;
+  border: 2px solid black;
+  cursor: pointer;
+  background-color: rgb(3, 68, 122);
+  color: aliceblue;
+}
+
+.footer {
+  background-color: #7e808c;
+  color: aliceblue;
+  height: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#shimmer-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 50px;
+}
+
+.shimmer-card {
+  height: 350px;
+  width: 300px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.shimmer-card .shimmer-img {
+  height: 200px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(186, 173, 173, 0.2),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmerAnimation 1.5s infinite;
+}
+
+.shimmer-card .shimmer-txt1 {
+  height: 40px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(204, 198, 198, 0.8),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmerAnimation 1.5s infinite;
+}
+
+.shimmer-card .shimmer-txt2 {
+  height: 20px;
+  background-color: #e2e2e2;
+  width: 60%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(165, 161, 161, 0.8),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmerAnimation 1.5s infinite;
+}
+@keyframes shimmerAnimation {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.about {
+  height: 85vh;
+}
+
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.error-container .error-logo img {
+  height: 20vh;
+  width: auto;
+}
+
+.error-container .error-status {
+  font-size: 20vmin;
+  margin: 30px;
+}
+
+.error-container .error-text {
+  font-size: 5vmin;
+  margin: 15px;
+}
+
+.contact {
+  height: 83.4vh;
+}
+
+.restaurentmenu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.restaurentmenu-container .resinfo {
+  display: flex;
+  justify-content: space-between;
+  height: 50vh;
+  width: 70vw;
+  padding: 30px;
+}
+
+.restaurentmenu-container .resinfo .img img {
+  height: 300px;
+  width: auto;
+  border-radius: 10px;
+}
+
+.restaurentmenu-container .resinfo .resinfo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 12vh;
+}
+
+.restaurentmenu-container .itemList {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  gap: 10px;
+  padding: 10px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  width: 100%;
+  justify-content: start;
+}
+
+@media only screen and (max-width: 750px) {
+  .restaurentmenu-container .resinfo {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+}
