@@ -35,8 +35,8 @@ const appRoute = createBrowserRouter([
         element: <About />,
         children: [
           {
-            path: "Profile",
-            element: <Profile />, //if we write /profile then it will route at localstorage/:1234/Profile
+            path: "Profile", //if we write /profile then it will route at localstorage/:1234/Profile
+            element: <Profile />,
           },
         ],
       },
