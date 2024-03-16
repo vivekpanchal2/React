@@ -1,0 +1,9 @@
+install react-router-dom for routing;
+import browser router from react 
+SPA
+Type of routing
+outlet
+
+
+
+https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=70279
