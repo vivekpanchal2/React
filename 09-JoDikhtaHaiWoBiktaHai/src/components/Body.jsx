@@ -33,19 +33,19 @@ const Body = () => {
   return restaurantList.length === 0 ? (
     <Shimmer />
   ) : (
-    <>
-      <div className="search-container">
+    <div className="">
+      <div className="flex justify-center p-10">
         <input
           type="text"
-          className="search-bar"
-          placeholder="Search Your Favourite Restaurents"
+          className="p-2 w-1/4 text-ellipsis border-2 rounded-s-lg border-black border-collapse"
+          placeholder="Search Your Favourite Restaurants"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
         />
         <button
-          className="search-btn"
+          className="p-3 text-ellipsis rounded-e-lg bg-red-600"
           onClick={handleSearchClick} // set new filtered list
         >
           Search
@@ -57,7 +57,7 @@ const Body = () => {
           <p>Restaurant not found. Please try a different search.</p>
         </div>
       ) : (
-        <div className="restaurantCards">
+        <div className="flex flex-wrap justify-center">
           {restaurantList.map((restaurant) => {
             return (
               <Link
@@ -70,7 +70,7 @@ const Body = () => {
           })}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

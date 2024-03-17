@@ -10,16 +10,16 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Profile from "./components/Profile";
 
-const Xmart = lazy(() => import("./components/xmart"));
+const Xmart = lazy(() => import("./components/Xmart"));
 const About = lazy(() => import("./components/About"));
 
 const App = () => {
   return (
-    <>
+    <div>
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 };
 
